@@ -8,7 +8,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 /**
- * Classe que realiza testes a uma API.
+ * Classe que realiza testes à API.
  * @author dantiii
  *
  */
@@ -18,20 +18,20 @@ public class APITest {
     @BeforeClass
     public static void setup() {
         // Config global for Rest Assured
-        RestAssured.baseURI = "http://localhost:8001/lab-backend/voos";
+        RestAssured.baseURI = "http://localhost:8080/api/states";
     }
 
-    // (1) Status code when GET
+    // Status code when GET
 
     @Test
-    public void getAllAtates() {
+    public void getAllStates() {
         RestAssured.given()
                 //.log().all() 	// log da req
                 .when()
-                .get("/todo")
+                    .get("/")
                 .then()
                 //.log().all()	// log da res
-                .statusCode(200)
+                    .statusCode(200)
         ;
     }
 }
