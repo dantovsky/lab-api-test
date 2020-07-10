@@ -18,7 +18,7 @@ public class APITest {
     @BeforeClass
     public static void setup() {
         // Config global for Rest Assured
-        RestAssured.baseURI = "http://localhost:8080/api/states";
+        RestAssured.baseURI = "http://localhost:8080/api/";
     }
 
     // Status code when GET
@@ -28,7 +28,7 @@ public class APITest {
         RestAssured.given()
                 //.log().all() 	// log da req
                 .when()
-                    .get("/")
+                    .get("/states")
                 .then()
                 //.log().all()	// log da res
                     .statusCode(200)
